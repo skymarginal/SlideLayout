@@ -1,4 +1,4 @@
-package com.yscall.slide.view;
+package com.yscall.slide.view.slide;
 
 import android.animation.Animator;
 import android.animation.ValueAnimator;
@@ -22,45 +22,52 @@ public class SlideLayout extends RelativeLayout implements GestureDetector.OnGes
     GestureDetector gestureDetector;
     MarginLayoutParams marginParams;
 
-    int height = 0;
     /**
      * view的高度
      */
-    int lastY = 0;
+    int height = 0;
+
     /**
      * 点击的位置
      */
-    int offY = 0;
+    int lastY = 0;
+
     /**
      * 手指相对控件滑动距离
      */
-    int top = 0;
+    int offY = 0;
+
     /**
      * 距父布局顶部距离
      */
-    int bottom = 0;
+    int top = 0;
+
     /**
      * 距父布局底部距离
+     */
+    int bottom = 0;
+
+    /**
+     * 动画位移距离
      */
 //    int left = 0;
 //    int right = 0;
     int toYDelta = 0;
-    /**
-     * 动画位移距离
-     */
-    int moveDivide = 4;
+
     /**
      * 上下位移动画分界线
      */
-    int fastOffset = 25;
+    int moveDivide = 4;
+
     /**
      * 快速滑动距离
      */
-    boolean isFastSliding = false;
+    int fastOffset = 25;
 
     /**
      * 向上快速滑动
      */
+    boolean isFastSliding = false;
 
     public SlideLayout(Context context) {
         super(context);
@@ -127,7 +134,7 @@ public class SlideLayout extends RelativeLayout implements GestureDetector.OnGes
                 marginParams.topMargin = top;
                 marginParams.bottomMargin = -top;
                 setLayoutParams(marginParams);
-                if(listener != null){
+                if (listener != null) {
                     listener.onOffset(-top);
                 }
                 //    layout(left, top, right, bottom);
@@ -186,7 +193,7 @@ public class SlideLayout extends RelativeLayout implements GestureDetector.OnGes
                 marginParams.topMargin = marginTop;
                 marginParams.bottomMargin = -marginTop;
                 setLayoutParams(marginParams);
-                if(listener != null){
+                if (listener != null) {
                     listener.onActionUp(marginTop);
                 }
             }
@@ -209,7 +216,7 @@ public class SlideLayout extends RelativeLayout implements GestureDetector.OnGes
             public void onAnimationEnd(Animator animator) {
                 setClickable(true);
                 if (direction) {
-                    if(listener != null){
+                    if (listener != null) {
                         listener.onFinish();
                     }
                 }

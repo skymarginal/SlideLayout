@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent" android:layout_height="match_parent"
     android:background="#01000000" >
-    <com.yscall.slide.view.SlideLayout
+    <com.yscall.slide.view.slide.SlideLayout
         android:id="@+id/slide_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -13,7 +13,7 @@
             android:layout_alignParentTop="true"
             android:scaleType="centerCrop"
             android:src="@drawable/slide_bg" />
-    </com.yscall.slide.view.SlideLayout>
+    </com.yscall.slide.view.slide.SlideLayout>
     <RelativeLayout
         android:id="@+id/title_layout"
         android:layout_width="wrap_content"

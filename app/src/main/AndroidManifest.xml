@@ -19,6 +19,10 @@
         </activity>
         <activity android:name=".activity.SlideActivity"
             android:screenOrientation="portrait" />
+        <activity android:name=".activity.IncomingActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".activity.MoveActivity"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

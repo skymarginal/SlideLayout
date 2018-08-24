@@ -14,7 +14,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.yscall.slide.R;
-import com.yscall.slide.view.SlideLayout;
+import com.yscall.slide.view.slide.SlideLayout;
 
 /**
  * Created by 你的样子 on 2018/8/20.

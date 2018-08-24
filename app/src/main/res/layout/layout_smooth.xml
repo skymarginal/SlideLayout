@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="wrap_content">
+    <ImageView
+        android:id="@+id/smooth_gif"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"/>
+    <com.yscall.slide.view.smooth.CircleImageView
+        android:id="@+id/smooth_hangup"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_centerVertical="true"
+        android:scaleType="center"
+        android:src="@drawable/ring_hangup"/>
+    <com.yscall.slide.view.smooth.CircleImageView
+        android:id="@+id/smooth_answer"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:scaleType="center"
+        android:src="@drawable/ring_answer"/>
+    <com.yscall.slide.view.smooth.CircleView
+        android:id="@+id/smooth_circle"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_centerVertical="true" />
+</RelativeLayout>

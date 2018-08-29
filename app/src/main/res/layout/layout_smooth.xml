@@ -2,10 +2,16 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent" android:layout_height="wrap_content">
     <ImageView
-        android:id="@+id/smooth_gif"
+        android:id="@+id/smooth_guide"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="72dp"
         android:layout_centerInParent="true"/>
+    <ImageView
+        android:id="@+id/smooth_logo"
+        android:layout_width="wrap_content"
+        android:layout_height="72dp"
+        android:layout_centerInParent="true"
+        android:src="@drawable/ring_logo"/>
     <com.yscall.slide.view.smooth.CircleImageView
         android:id="@+id/smooth_hangup"
         android:layout_width="60dp"

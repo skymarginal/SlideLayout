@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
 import com.bumptech.glide.Glide;
+
 import com.yscall.slide.R;
 import com.yscall.slide.utils.CommonUtils;
 
@@ -22,26 +23,29 @@ import com.yscall.slide.utils.CommonUtils;
 
 public class SmoothLayout extends RelativeLayout implements CircleView.OnCircleOffsetListener {
 
+    private Context context;
+
     private OnCallOperateListener operateListener;
 
     private CircleView circle;
     private CircleImageView hangup, answer;
-    private ImageView gif;
+    private ImageView logo,guide;
 
-    private int margin;
     private int hideLeft;
     private int hideRight;
 
     public SmoothLayout(Context context, AttributeSet attrs) {
         super(context, attrs);
+        this.context = context;
         LayoutInflater.from(context).inflate(R.layout.layout_smooth, this);
         circle = findViewById(R.id.smooth_circle);
         circle.setOnOffsetListener(this);
         hangup = findViewById(R.id.smooth_hangup);
         answer = findViewById(R.id.smooth_answer);
-        gif = findViewById(R.id.smooth_gif);
-        margin = CommonUtils.dip2px(context, 28);
-        Glide.with(context).load(R.drawable.anim_25).into(gif);
+        logo = findViewById(R.id.smooth_logo);
+        guide = findViewById(R.id.smooth_guide);
+        Glide.with(context).load(R.drawable.ring_guide).into(guide);
+        Glide.with(context).load(R.drawable.ring_logo).into(logo);
     }
 
     public void setOnCallOperateListener(OnCallOperateListener operateListener) {
@@ -51,6 +55,7 @@ public class SmoothLayout extends RelativeLayout implements CircleView.OnCircleO
     @Override
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
         super.onSizeChanged(w, h, oldw, oldh);
+        int margin = CommonUtils.dip2px(context, 28);
 
         LayoutParams hangupParams = (LayoutParams) hangup.getLayoutParams();
         hangupParams.leftMargin = margin;
@@ -98,12 +103,14 @@ public class SmoothLayout extends RelativeLayout implements CircleView.OnCircleO
 
     @Override
     public void onCircleDown() {
-        gif.setVisibility(View.INVISIBLE);
+        logo.setVisibility(View.INVISIBLE);
+        guide.setVisibility(View.INVISIBLE);
     }
 
     @Override
     public void onCircleReset() {
-        gif.setVisibility(View.VISIBLE);
+        logo.setVisibility(View.VISIBLE);
+        guide.setVisibility(View.VISIBLE);
     }
 
     @Override

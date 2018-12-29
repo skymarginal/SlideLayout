@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.yscall.slide.R;
+import com.yscall.slide.dialog.HomeMakeDialog;
 
 public class MainActivity extends Activity {
 
@@ -16,19 +17,25 @@ public class MainActivity extends Activity {
         findViewById(R.id.slide).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this,SlideActivity.class));
+                startActivity(new Intent(MainActivity.this, SlideActivity.class));
             }
         });
         findViewById(R.id.smooth).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this,IncomingActivity.class));
+                startActivity(new Intent(MainActivity.this, IncomingActivity.class));
             }
         });
         findViewById(R.id.move).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this,MoveActivity.class));
+                startActivity(new Intent(MainActivity.this, MoveActivity.class));
+            }
+        });
+        findViewById(R.id.popup).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                new HomeMakeDialog.Builder(MainActivity.this).create().show();
             }
         });
     }
